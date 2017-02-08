@@ -4,6 +4,11 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 namespace SecureGameGuard
 {
+    /// <summary>
+    /// SecureGameGuard.
+    /// 
+    /// Copyright (C) GNR092, 2016-2017.
+    /// </summary>
 	[Serializable]
 	public class Configs
 	{
