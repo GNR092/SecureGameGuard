@@ -26,9 +26,7 @@ namespace SecureGameGuard
 		static readonly object _Lock = new object();
 		private static List<string> array { get; set; }
 
-		private static readonly string PasswordHash = "G4M36U4RD14N";
-		private static readonly string SaltKey = "S@LT&KEY";
-		private static readonly string VIKey = "@1B2c3D4e5F6g7H!";
+		
 
 		public static void StartSecureGame(List<string> Config, bool error = false)
 		{
