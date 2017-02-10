@@ -1,4 +1,12 @@
-﻿using System;
+﻿/*
+ * Creado por SharpDevelop.
+ * Usuario: GNR092
+ * Fecha: 06/02/2017
+ * Hora: 08:04 p.m.
+ * 
+ * Para cambiar esta plantilla use Herramientas | Opciones | Codificación | Editar Encabezados Estándar
+ */
+using System;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 

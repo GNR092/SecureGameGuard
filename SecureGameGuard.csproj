@@ -18,6 +18,7 @@
     <DebugType>Full</DebugType>
     <RunCodeAnalysis>False</RunCodeAnalysis>
     <SourceAnalysisOverrideSettingsFile>C:\Users\GNR092\AppData\Roaming\ICSharpCode\SharpDevelop5\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
+    <AssemblyOriginatorKeyFile>SecureGameGuard.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -61,7 +62,6 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -69,6 +69,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutoClosingMessageBox.cs" />
+    <Compile Include="DataEncript.cs" />
+    <Compile Include="DefaultList.cs" />
+    <Compile Include="Enums.cs" />
     <Compile Include="GameGuard.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Configs.cs" />
@@ -83,6 +87,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="SecureGame.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MainUI.resx">
