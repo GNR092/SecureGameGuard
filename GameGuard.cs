@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Security.Cryptography;
 using System.IO;
+using System.Windows.Forms;
 
 namespace SecureGameGuard
 {
@@ -44,6 +45,7 @@ namespace SecureGameGuard
 
 		private static void CurrentLoop(object o)
 		{
+            SecureGame.notify.ShowBalloonTip(1000, "Notificacion", "SecureGameGuard Iniciado Correctamente", ToolTipIcon.Info);
 			while (!SecureGame.Disconect)
 			{
 				lock (_Lock)
@@ -61,8 +63,16 @@ namespace SecureGameGuard
 									{
 										Pitems.Kill();
 										Pitems.WaitForExit();
-										AutoClosingMessageBox.Show("Hack Detectado informando Administradores!!", "SecureGameGuard Hack detected!!", SecureGame.CloseTime);
-										continue;
+                                        new Thread((() =>
+                                        {
+                                            SecureGame.notify.ShowBalloonTip(4000, 
+                                                "SecureGameGuard Hack detected!!", 
+                                                "Hack Detectado informando Administradores!!\nPrograma: " + Pitems.ProcessName,
+                                                ToolTipIcon.Warning
+                                                );
+                                        })) 
+                                        { IsBackground = true}.Start();
+                                            continue;
 									}
 									catch (Exception e)
 									{
@@ -79,8 +89,16 @@ namespace SecureGameGuard
 									{
 										Pitems.Kill();
 										Pitems.WaitForExit();
-										AutoClosingMessageBox.Show("Hack Detectado informando Administradores!!", "SecureGameGuard Hack detected!!", SecureGame.CloseTime);
-										continue;
+                                        new Thread((() =>
+                                        {
+                                            SecureGame.notify.ShowBalloonTip(4000,
+                                                "SecureGameGuard Hack detected!!",
+                                                "Hack Detectado informando Administradores!!\nPrograma: " + Pitems.ProcessName,
+                                                ToolTipIcon.Warning
+                                                );
+                                        })) 
+                                        { IsBackground = true }.Start();
+                                        continue;
 									}
 									catch (Exception e)
 									{

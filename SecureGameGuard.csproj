@@ -59,6 +59,7 @@
   <ItemGroup>
     <Reference Include="GUI">
       <HintPath>..\..\..\GitHub\CustomProgressBar\bin\Debug\GUI.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
@@ -69,7 +70,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AutoClosingMessageBox.cs" />
+    <Compile Include="MessageBoxAutoClosing.cs" />
     <Compile Include="DataEncript.cs" />
     <Compile Include="DefaultList.cs" />
     <Compile Include="Enums.cs" />
@@ -89,8 +90,17 @@
     </Compile>
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="SecureGame.cs" />
+    <Compile Include="SS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SS.Designer.cs">
+      <DependentUpon>SS.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="MainUI.es-MX.resx">
+      <DependentUpon>MainUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainUI.resx">
       <DependentUpon>MainUI.cs</DependentUpon>
     </EmbeddedResource>
@@ -101,6 +111,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Splash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GUI.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
